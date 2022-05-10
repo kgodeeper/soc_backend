@@ -12,4 +12,4 @@ app.use(body_parser.json());
 app.use(body_parser.urlencoded({extended:true}));
 app.use(router);
 
-app.listen(process.env.PORT | 8080);
+app.listen(process.env.PORT);
