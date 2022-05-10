@@ -1,0 +1,181 @@
+# Đăng nhập
+# POST http://localhost:8080/user-login
+# Content-Type: application/json
+
+# {
+#      "usertxt":"USR001",
+#      "passtxt":"30032000"
+# }
+
+# Đăng ký
+# POST http://localhost:8080/user-sign
+# Content-Type: application/json
+
+# {
+#      "usertxt":"USR006",
+#      "passtxt":"12345678"
+# }
+
+# # Kiểm tra quyền của user
+# GET http://localhost:8080/check-permission
+# Content-Type: application/json
+# Authorization: Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiU1NUMDAxIiwiaWF0IjoxNjUxOTgwMzE4LCJleHAiOjE2NTIwNjY3MTh9.Wf1LBw2rXPmREy_z63uScYLvireQFOkb592QqNd0xCc
+
+# Lấy toàn bộ sản phẩm
+# GET http://localhost:8080/get-all-products
+# Content-Type: application/json
+# Authorization: Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiU1NUMDAxIiwiaWF0IjoxNjUxOTgwMzE4LCJleHAiOjE2NTIwNjY3MTh9.Wf1LBw2rXPmREy_z63uScYLvireQFOkb592QqNd0xCc
+
+# Lấy sản phẩm qua ID
+# GET http://localhost:8080/get-product/10000
+# Content-Type: application/json
+# Authorization: Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiU1NUMDAxIiwiaWF0IjoxNjUxOTgwMzE4LCJleHAiOjE2NTIwNjY3MTh9.Wf1LBw2rXPmREy_z63uScYLvireQFOkb592QqNd0xCc
+
+# Lấy tất cả phiên bản của sản phẩm, thông qua ID sản phẩm
+# GET http://localhost:8080/get-all-items/10000
+# Content-Type: application/json
+# Authorization: Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiU1NUMDAxIiwiaWF0IjoxNjUxOTgwMzE4LCJleHAiOjE2NTIwNjY3MTh9.Wf1LBw2rXPmREy_z63uScYLvireQFOkb592QqNd0xCc
+
+# Lấy tất cả size của một phiên bản, thông qua ID phiên bản
+# GET http://localhost:8080/get-all-sizes/1
+# Content-Type: application/json
+# Authorization: Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiU1NUMDAxIiwiaWF0IjoxNjUxOTgwMzE4LCJleHAiOjE2NTIwNjY3MTh9.Wf1LBw2rXPmREy_z63uScYLvireQFOkb592QqNd0xCc
+
+# Lấy tất cả giỏ hàng chưa thanh toán
+# GET http://localhost:8080/get-carts
+# Content-Type: application/json
+# Authorization: Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiVVNSMDAxIiwiaWF0IjoxNjUxOTc0MzYyLCJleHAiOjE2NTIwNjA3NjJ9.vZwlUVoXDG3eYWLaqgJt-6FFRm4bxV8gT73ayndUTAs
+
+# Thay đổi số lượng của item trong giỏ hàng
+# PATCH http://localhost:8080/change-quantity
+# Content-Type: application/json
+# Authorization: Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiVVNSMDAxIiwiaWF0IjoxNjUxOTc0MzYyLCJleHAiOjE2NTIwNjA3NjJ9.vZwlUVoXDG3eYWLaqgJt-6FFRm4bxV8gT73ayndUTAs
+
+# {
+#      "cart":1,
+#      "quantity":2
+# }
+
+# Xóa một/nhiều item trong giỏ hàng
+# DELETE http://localhost:8080/delete-carts
+# Content-Type: application/json
+# Authorization: Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiVVNSMDAxIiwiaWF0IjoxNjUxOTc0MzYyLCJleHAiOjE2NTIwNjA3NjJ9.vZwlUVoXDG3eYWLaqgJt-6FFRm4bxV8gT73ayndUTAs
+
+# {
+#      "carts":[
+#           3,4
+#      ]
+# }
+
+# # Thêm giỏ hàng
+# POST http://localhost:8080/add-cart
+# Content-Type: application/json
+# Authorization: Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiVVNSMDAxIiwiaWF0IjoxNjUxOTc0MzYyLCJleHAiOjE2NTIwNjA3NjJ9.vZwlUVoXDG3eYWLaqgJt-6FFRm4bxV8gT73ayndUTAs
+
+# {
+#      "product":10000,
+#      "size":1,
+#      "color":2,
+#      "quantity":1
+# }
+
+# Lấy địa chỉ của customer
+# GET http://localhost:8080/get-address
+# Content-Type: application/json
+# Authorization: Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiVVNSMDAxIiwiaWF0IjoxNjUyMDYyOTUzLCJleHAiOjE2NTIxNDkzNTN9.ZI9nyo-Q_xUYLe5uJ1x_BUOqmhXBS17OqYAYiG0q-dU
+
+# Thêm một order
+# POST http://localhost:8080/order
+# Content-Type: application/json
+# Authorization: Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiVVNSMDAxIiwiaWF0IjoxNjUyMDYyOTUzLCJleHAiOjE2NTIxNDkzNTN9.ZI9nyo-Q_xUYLe5uJ1x_BUOqmhXBS17OqYAYiG0q-dU
+
+# {
+#      "payment":0,
+#      "address":2,
+#      "cart":[1]
+# }
+
+# Yêu cầu thanh toán
+# POST  http://localhost:8080/order-pay
+# Content-Type: application/json
+# Authorization: Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiVVNSMDAxIiwiaWF0IjoxNjUyMDYyOTUzLCJleHAiOjE2NTIxNDkzNTN9.ZI9nyo-Q_xUYLe5uJ1x_BUOqmhXBS17OqYAYiG0q-dU
+
+# {
+#      "total":100,
+#      "order":9
+# }
+
+# Lấy ra các order
+# GET  http://localhost:8080/get-orders
+# Content-Type: application/json
+# Authorization: Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiVVNSMDAxIiwiaWF0IjoxNjUyMDYyOTUzLCJleHAiOjE2NTIxNDkzNTN9.ZI9nyo-Q_xUYLe5uJ1x_BUOqmhXBS17OqYAYiG0q-dU
+
+# Lấy ra các cart
+# POST http://localhost:8080/get-cart
+# Content-Type: application/json
+# Authorization: Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiVVNSMDAxIiwiaWF0IjoxNjUyMDYyOTUzLCJleHAiOjE2NTIxNDkzNTN9.ZI9nyo-Q_xUYLe5uJ1x_BUOqmhXBS17OqYAYiG0q-dU
+
+# Lấy ra các cart của các order
+# POST http://localhost:8080/get-order-cart
+# Content-Type: application/json
+# Authorization: Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiVVNSMDAxIiwiaWF0IjoxNjUyMDYyOTUzLCJleHAiOjE2NTIxNDkzNTN9.ZI9nyo-Q_xUYLe5uJ1x_BUOqmhXBS17OqYAYiG0q-dU
+
+# {
+#      "order":[{"id":29},{"id":30}]
+# }
+
+# Thêm một đánh giá
+# POST http://localhost:8080/vote
+# Content-Type: application/json
+# Authorization: Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiVVNSMDAxIiwiaWF0IjoxNjUyMTUwMDk3LCJleHAiOjE2NTIyMzY0OTd9.2Gnrras5x1A-Cb5T1rujbDCD-EzCgDtUeAD6K1CCxBo
+
+# {
+#      "product":[1000,2000],
+#      "vote":"Good !",
+#      "rate":5,
+#      "order":29
+# }
+
+# Lấy toàn bộ đánh giá của sản phẩm
+# GET http://localhost:8080/get-vote/10000
+# Content-Type: application/json
+# Authorization: Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiVVNSMDAxIiwiaWF0IjoxNjUyMTUwMDk3LCJleHAiOjE2NTIyMzY0OTd9.2Gnrras5x1A-Cb5T1rujbDCD-EzCgDtUeAD6K1CCxBo
+
+# {
+#      "product":10000
+# }
+
+# Thêm một product
+# POST http://localhost:8080/add-product
+# Content-Type: application/json
+# Authorization: Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiVVNSMDAxIiwiaWF0IjoxNjUyMTUwMDk3LCJleHAiOjE2NTIyMzY0OTd9.2Gnrras5x1A-Cb5T1rujbDCD-EzCgDtUeAD6K1CCxBo
+
+# {
+#      "nametxt":"test",
+#      "brandtxt":"Nike",
+#      "yeartxt":2018,
+#      "gendertxt":1,
+#      "pricetxt":20,
+#      "urltxt":"test@123",
+#      "desctxt":"Mo ta"
+# }
+
+# Lấy ra toàn bộ order
+# GET http://localhost:8080/get-all-order
+# Content-Type: application/json
+# Authorization: Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiVVNSMDAxIiwiaWF0IjoxNjUyMTUwMDk3LCJleHAiOjE2NTIyMzY0OTd9.2Gnrras5x1A-Cb5T1rujbDCD-EzCgDtUeAD6K1CCxBo
+
+# Lấy ra toàn bộ cart
+
+# GET http://localhost:8080/get-all-cart
+# Content-Type: application/json
+# Authorization: Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiVVNSMDAxIiwiaWF0IjoxNjUyMTUwMDk3LCJleHAiOjE2NTIyMzY0OTd9.2Gnrras5x1A-Cb5T1rujbDCD-EzCgDtUeAD6K1CCxBo
+
+#Lấy ra toàn bộ cart_order
+# GET http://localhost:8080/get-all-cartorder
+# Content-Type: application/json
+# Authorization: Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiVVNSMDAxIiwiaWF0IjoxNjUyMTUwMDk3LCJleHAiOjE2NTIyMzY0OTd9.2Gnrras5x1A-Cb5T1rujbDCD-EzCgDtUeAD6K1CCxBo
+
+# GET http://localhost:8080/get-all-items-product/10000
+# Content-Type: application/json
+# Authorization: Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiVVNSMDAxIiwiaWF0IjoxNjUyMTUwMDk3LCJleHAiOjE2NTIyMzY0OTd9.2Gnrras5x1A-Cb5T1rujbDCD-EzCgDtUeAD6K1CCxBo
