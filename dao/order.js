@@ -36,7 +36,7 @@ const update_quantity = (cart)=>{
                    carts = result;
                    console.log(carts);
                    for(let i = 0;  i < carts.length; i++){
-                        sql = `UPDATE size SET quantity = '${(Number)(carts[i].cart_quantity) - (Number)(carts[i].quantity)}' WHERE id = '${carts[i].size}'`;
+                        sql = `UPDATE size SET quantity = '${Math.abs((Number)(carts[i].cart_quantity) - (Number)(carts[i].quantity))}' WHERE id = '${carts[i].size}'`;
                         connect.query(sql,(error,result)=>{
                              console.log(error,result);
                         })
