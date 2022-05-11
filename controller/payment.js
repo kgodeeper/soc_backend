@@ -17,8 +17,8 @@ const order_pay = (req,res)=>{
           "payment_method": "paypal"
           },
           "redirect_urls": {
-          "return_url": `http://localhost:8080/pay-done/${order}/${total}`,
-          "cancel_url": "http://localhost:8080/pay-cancel"
+          "return_url": `https://socbe.herokuapp.com/pay-done/${order}/${total}`,
+          "cancel_url": "https://socbe.herokuapp.com/pay-cancel"
           },
           "transactions": [{
           "amount": {
